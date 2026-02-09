@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jérémy GOMMEZ | Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Style spécifique pour centrer le contenu de l'accueil */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh; /* Centre verticalement sur la majeure partie de l'écran */
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .education-section {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .card-exp {
+            margin: 15px auto;
+            max-width: 600px; /* Évite que les cartes soient trop larges une fois centrées */
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">Jérémy GOMMEZ</a>
+    <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="experiences.html">Expériences</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="veille.html">Veille Tech</a></li>
+        <li><i id="theme-toggle" class="fas fa-moon" style="cursor:pointer; color:var(--accent);"></i></li>
+    </ul>
+</nav>
+
+<main class="main-container">
+    <section class="hero">
+        <h1>Etudiant Alternant Technicien Support Informatique</h1>
+        <p style="font-size: 1.3rem; margin-bottom: 25px;">
+            BTS SIO – Option SISR (2024–2026)
+        </p>
+        <a href="CV_GOMMEZ_Jeremy.pdf" class="btn" style="background:var(--accent); color:white; padding:15px 30px; text-decoration:none; border-radius:8px; font-weight: bold;">
+            <i class="fas fa-download"></i> Télécharger mon CV
+        </a>
+    </section>
+
+<section class="education-section">
+    <h3 class="titre-section">- Mon parcours Scolaire -</h3>
+
+    <div class="timeline">
+        <div class="ligne-centrale"></div>
+
+        <div class="container-edu gauche">
+            <div class="contenu-edu">
+                <strong>Lycée Parc de Vilgenis (2024-2026)</strong>
+                <p>BTS SIO Option SISR</p>
+            </div>
+            <span class="point-jonction"></span>
+        </div>
+
+        <div class="container-edu droite">
+            <div class="contenu-edu">
+                <strong>Lycée Polyvalent de Cachan (2023-2024)</strong>
+                <p>BTS CRSA</p>
+            </div>
+            <span class="point-jonction"></span>
+        </div>
+
+        <div class="container-edu gauche">
+            <div class="contenu-edu">
+                <strong>Lycée ¨Polyvalent de Cachan (2020-2023)</strong>
+                <p>Bac Pro SN option C</p>
+            </div>
+            <span class="point-jonction"></span>
+        </div>
+
+        <div class="container-edu droite">
+            <div class="contenu-edu">
+                <strong>Collège Sainte-Marie (2016-2020)</strong>
+                <p>Diplôme National du Brevet</p>
+            </div>
+            <span class="point-jonction"></span>
+        </div>
+    </div>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
