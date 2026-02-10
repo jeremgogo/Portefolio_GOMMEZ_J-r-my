@@ -384,3 +384,29 @@ nav a:hover, nav a.active {
 
 .gauche::before { right: 0; }
 .droite::before { left: 0; }
+/* Ajoute ceci à la fin de ton style.css pour gérer la grille de compétences */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.skills-grid .card-exp {
+    width: 45%; /* Affiche 2 cartes par ligne */
+    min-width: 300px; /* Evite qu'elles soient trop petites sur mobile */
+    margin: 0; /* On gère l'espacement avec gap */
+}
+
+/* Petit ajustement pour que les listes soient jolies */
+.skill-list li {
+    margin-bottom: 8px;
+    padding-left: 0;
+    list-style-type: none; /* On enlève les puces par défaut */
+}
+.skill-list li::before {
+    content: "🔹"; /* Puce personnalisée */
+    margin-right: 10px;
+    font-size: 0.8em;
+}
