@@ -410,65 +410,274 @@ nav a:hover, nav a.active {
     margin-right: 10px;
     font-size: 0.8em;
 }
+/* Réinitialisation de base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f6f8; /* Gris très clair pour le fond */
+    color: #333;
+}
 
-/* ============================= */
-/* 🏢 MODALE ENTREPRISE          */
-/* ============================= */
-
-.modal {
-    display: none; /* Masqué par défaut */
-    position: fixed;
-    z-index: 2000;
-    left: 0;
+/* =========================================
+   STYLE DE L'EN-TÊTE (MENU)
+   ========================================= */
+header {
+    background-color: #ffffff;
+    border-top: 8px solid #3c3230; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+    position: sticky;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fond assombri */
-    backdrop-filter: blur(4px); /* Petit effet de flou en arrière-plan */
 }
 
-.modal-content {
-    background-color: var(--card);
-    color: var(--text);
-    margin: 15% auto; /* Centré verticalement et horizontalement */
-    padding: 25px 30px;
-    border: 1px solid var(--accent);
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    animation: fadeIn 0.3s ease-in-out;
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.modal-content h2 {
-    margin-top: 0;
-    color: var(--title);
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
-.close-btn {
-    color: var(--text);
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333333; 
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #4b6cb7;
+}
+
+/* Lien actif si besoin de le marquer en bleu */
+.nav-links a.active {
+    color: #3b71ca;
+}
+
+.icon-settings {
+    color: #3b71ca; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+}
+
+.icon-settings svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* =========================================
+   STYLE DU CONTENU DE LA PAGE ENTREPRISE
+   ========================================= */
+.main-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Style des blocs de contenu (Cartes) */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid #eaeaea;
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    color: #3b71ca; /* Bleu rappelant l'icône */
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.card li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.card li strong {
+    color: #000;
+}
+
+/* =========================================
+   RESPONSIVE (Mobiles)
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .main-content {
+        margin: 20px auto;
+    }
+}/* =========================================
+   RESET DE BASE
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa; /* Fond de page légèrement gris */
+    color: #333;
+}
+
+/* =========================================
+   STYLE DE L'EN-TÊTE CORRIGÉ (SANS BOÎTE)
+   ========================================= */
+.site-header {
+    background-color: #ffffff; /* Fond blanc uni */
+    border-top: 7px solid #362e2b; /* La barre sombre tout en haut */
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Ombre très légère */
+    position: sticky;
+    top: 0;
+}
+
+.header-inner {
+    max-width: 1400px; 
+    margin: 0 auto;    
+    padding: 15px 40px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 35px; /* Espacement parfait entre les liens */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #444444; 
+    font-weight: 600;
+    font-size: 0.95rem;
     transition: color 0.2s;
 }
 
-.close-btn:hover {
-    color: var(--accent);
+.nav-link.active {
+    color: #3b71ca; /* Le bleu actif de ton image */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+.nav-link:hover {
+    color: #3b71ca;
 }
 
-/* Effet au survol du bouton "Mon Entreprise" */
-#btn-entreprise:hover {
-    background-color: var(--accent) !important;
-    color: #fff !important;
-    transition: 0.3s;
+.settings-icon {
+    color: #3b71ca; 
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* =========================================
+   STYLE DU CONTENU (LES CARTES ARTEMYS)
+   ========================================= */
+.main-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid #eaeaea;
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    color: #3b71ca; /* Titres en bleu */
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.card li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.card li strong {
+    color: #000;
+}
+
+/* =========================================
+   RESPONSIVE (POUR LES MOBILES)
+   ========================================= */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .main-content {
+        margin: 20px auto;
+    }
 }
