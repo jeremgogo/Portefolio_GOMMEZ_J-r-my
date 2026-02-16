@@ -410,3 +410,65 @@ nav a:hover, nav a.active {
     margin-right: 10px;
     font-size: 0.8em;
 }
+
+/* ============================= */
+/* 🏢 MODALE ENTREPRISE          */
+/* ============================= */
+
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond assombri */
+    backdrop-filter: blur(4px); /* Petit effet de flou en arrière-plan */
+}
+
+.modal-content {
+    background-color: var(--card);
+    color: var(--text);
+    margin: 15% auto; /* Centré verticalement et horizontalement */
+    padding: 25px 30px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: var(--title);
+}
+
+.close-btn {
+    color: var(--text);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--accent);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Effet au survol du bouton "Mon Entreprise" */
+#btn-entreprise:hover {
+    background-color: var(--accent) !important;
+    color: #fff !important;
+    transition: 0.3s;
+}
