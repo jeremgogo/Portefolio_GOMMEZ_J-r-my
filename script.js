@@ -16,4 +16,28 @@ themeToggle.addEventListener('click', () => {
         themeToggle.classList.replace('fa-sun', 'fa-moon');
     }
     localStorage.setItem('theme', theme);
+
 });
+// Gestion de la modale "Mon Entreprise"
+const modal = document.getElementById("modal-artemys");
+const btnEntreprise = document.getElementById("btn-entreprise");
+const spanClose = document.querySelector(".close-btn");
+
+if (btnEntreprise && modal && spanClose) {
+    // Ouvrir la modale au clic sur le bouton
+    btnEntreprise.addEventListener('click', () => {
+        modal.style.display = "block";
+    });
+
+    // Fermer la modale au clic sur la croix (X)
+    spanClose.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+    // Fermer la modale si l'utilisateur clique en dehors de la boîte
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}
