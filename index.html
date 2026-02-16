@@ -24,9 +24,16 @@
     <section class="content-page" style="text-align: center; margin-bottom: 40px;">
         <h1>Bienvenue sur mon Portfolio</h1>
         <p>Étudiant en BTS SIO option SISR, passionné par l'administration système et la cybersécurité.</p>
-        <a href="CV_Jeremy.pdf" class="btn-cv" download style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
-            <i class="fas fa-download"></i> Télécharger mon CV
-        </a>
+        
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <a href="CV_Jeremy.pdf" class="btn-cv" download style="padding: 10px 20px; background-color: var(--accent); color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                <i class="fas fa-download"></i> Télécharger mon CV
+            </a>
+            
+            <button id="btn-entreprise" style="padding: 10px 20px; background-color: transparent; color: var(--text); border: 2px solid var(--accent); cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 16px; font-family: inherit;">
+                <i class="fas fa-building"></i> Mon Entreprise
+            </button>
+        </div>
     </section>
 
     <section class="content-page">
@@ -55,15 +62,22 @@
                 <div class="card-exp">
                     <h3>Bac Pro SN</h3>
                     <p class="company">Lycée Polyvalent de Cachan | 2020 - 2023</p>
-                    <p>Systèmes Numériques option C (Réseaux informatiques).</p>
+                    <p>Systèmes Numériques option C (Réseaux Informatiques et Systèmes Communicants).</p>
                 </div>
             </div>
-
         </div>
     </section>
+
+    <div id="modal-artemys" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Mon Entreprise : Artemys</h2>
+            <p>Artemys est une ESN (Entreprise de Services du Numérique) spécialisée dans les infrastructures IT et le support utilisateur. J'y travaille en tant que Technicien Support, en prestation pour le cabinet d'avocats international Gide Loyrette Nouel.</p>
+        </div>
+    </div>
+
 </main>
 
 <script src="script.js"></script>
 </body>
-
 </html>
