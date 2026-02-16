@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jérémy GOMMEZ - Présentation de l'entreprise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <a href="index.html" class="logo">Jérémy GOMMEZ</a>
-    <ul>
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="experiences.html">Expériences</a></li>
-        <li><a href="competences.html">Compétences</a></li>
-        <li><a href="veille.html">Veille Tech</a></li>
-        <li><i id="theme-toggle" class="fas fa-moon" style="cursor:pointer; color:var(--accent);"></i></li>
-    </ul>
-</nav>
+    <nav>
+        <a href="index.html" class="logo">Jérémy GOMMEZ</a>
+        <ul>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="veille.html">Veille Tech</a></li>
+            <li><i id="theme-toggle" class="fas fa-moon" title="Changer de mode"></i></li>
+        </ul>
+    </nav>
 
     <main class="main-content">
         <h1>Présentation de l'entreprise : Groupe Artemys</h1>
@@ -38,14 +39,14 @@
             <ul>
                 <li><strong>Typologie de clients :</strong> Positionnement historique fort sur les Grands Comptes et les ETI (Entreprises de Taille Intermédiaire).</li>
                 <li><strong>Modes d'intervention :</strong> Infogérance, Centres de Services managés, et Assistance Technique (AT).</li>
-                <li><strong>Partenariats technologiques :</strong> Partenaire Microsoft Gold depuis 2004 (Tier 1, Modern Work, Security), mais aussi AWS, Nutanix, Palo Alto.</li>
+                <li><strong>Partenariats technologiques :</strong> Partenaire Microsoft Gold depuis 2004, mais aussi AWS, Nutanix, Palo Alto.</li>
             </ul>
         </section>
 
         <section class="card">
             <h2>3. Pôles d'Expertise</h2>
             <ul>
-                <li><strong>Infrastructure, Cloud & DevOps :</strong> Conception et hybridation (Cloud privé/public), automatisation, CI/CD, FinOps.</li>
+                <li><strong>Infrastructure, Cloud & DevOps :</strong> Conception et hybridation, automatisation, CI/CD, FinOps.</li>
                 <li><strong>End-User Services & Modern Workplace :</strong> Outils collaboratifs, accompagnement utilisateurs, Service Desk.</li>
                 <li><strong>Data & Cybersécurité :</strong> BI, Big Data, Réseaux, et Sécurité.</li>
                 <li><strong>Conseil & Ingénierie :</strong> IT Staffing, et accompagnement MOE / MOA.</li>
@@ -55,12 +56,41 @@
         <section class="card">
             <h2>4. Valeurs, Culture & RSE</h2>
             <ul>
-                <li><strong>ADN de l'entreprise :</strong> ProximITé, ConvivialITé, SolidarITé et EsprIT d'équipe (une culture qui met "l'humain avant tout").</li>
-                <li><strong>Mobilité & Carrière :</strong> Suivi de proximité avec des possibilités de reconversion, d'évolution technique ou managériale.</li>
-                <li><strong>Engagements Responsables :</strong> Adhésion au Global Compact, Planet Tech'Care, Label SILVER EcoVadis Sustainability, et Charte de la Diversité.</li>
+                <li><strong>ADN de l'entreprise :</strong> ProximITé, ConvivialITé, SolidarITé et EsprIT d'équipe.</li>
+                <li><strong>Mobilité & Carrière :</strong> Suivi de proximité avec des possibilités d'évolution technique ou managériale.</li>
+                <li><strong>Engagements Responsables :</strong> Adhésion au Global Compact, Planet Tech'Care, Label SILVER EcoVadis.</li>
             </ul>
         </section>
     </main>
 
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            // Bascule la classe .light-mode sur le body
+            body.classList.toggle('light-mode');
+
+            // Change l'icône entre lune et soleil
+            if (body.classList.contains('light-mode')) {
+                themeToggle.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeToggle.classList.replace('fa-sun', 'fa-moon');
+            }
+
+            // Sauvegarde le choix dans le navigateur
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+        });
+
+        // Appliquer le thème sauvegardé au chargement de la page
+        window.onload = () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                body.classList.add('light-mode');
+                themeToggle.classList.replace('fa-moon', 'fa-sun');
+            }
+        };
+    </script>
 </body>
 </html>
