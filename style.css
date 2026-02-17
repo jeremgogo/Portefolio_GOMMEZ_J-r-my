@@ -210,3 +210,155 @@ strong { color: var(--title); }
     .gauche::before, .droite::before { left: 31px; width: 39px; }
     .skills-grid .card-exp { width: 100%; }
 }
+/* ============================================================ */
+/* ✨ AJOUTS MISE EN PAGE : PRÉSENTATION ENTREPRISES           */
+/* ============================================================ */
+
+/* Conteneur principal pour centrer le contenu */
+.main-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Style des titres de pages (H1) */
+.main-content h1 {
+    font-size: 2.2rem;
+    color: var(--title);
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Style des Cartes d'entreprise (Sections) */
+.card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 6px solid var(--accent); /* Barre bleue sur le côté */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Style des sous-titres dans les cartes (H2) */
+.card h2 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 1.4rem;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Style des listes à puces à l'intérieur des cartes */
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    position: relative;
+    padding-left: 25px;
+    color: var(--text); /* C'est ici que l'écriture devient bleue en Dark Mode */
+}
+
+/* Puces personnalisées (Petits carrés bleus) */
+.card li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+/* Style pour les mots importants (Strong) */
+.card li strong {
+    color: var(--title);
+    font-weight: 600;
+}
+
+/* ============================================================ */
+/* 🌙 CORRECTIONS SPÉCIFIQUES DARK MODE (ÉCRITURE BLEUE)        */
+/* ============================================================ */
+
+body.dark-mode .card {
+    border-color: var(--accent) !important;
+    background-color: var(--card) !important;
+}
+
+/* On force l'écriture en bleu vif pour tout le texte en mode sombre */
+body.dark-mode .card li, 
+body.dark-mode .card p,
+body.dark-mode .main-content h1 {
+    color: #58a6ff !important; 
+}
+
+/* On met les titres et les "strong" en bleu plus clair pour le contraste */
+body.dark-mode .card h2,
+body.dark-mode .card li strong {
+    color: #8ab4f8 !important;
+}
+
+/* Animation d'apparition fluide */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Adaptation pour mobile */
+@media (max-width: 768px) {
+    .main-content h1 {
+        font-size: 1.6rem;
+    }
+    .card {
+        padding: 20px;
+    }
+}
+/* Style de la flèche de retour */
+.back-arrow {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.back-arrow:hover {
+    background-color: var(--accent);
+    color: var(--bg) !important; /* Le texte devient de la couleur du fond au survol */
+    transform: translateX(-5px);
+}
+
+/* S'assurer que le conteneur main permet le positionnement absolu */
+.main-content, .main-container {
+    position: relative; /* Indispensable pour que la flèche se place par rapport à ce bloc */
+    padding-top: 60px; /* Ajoute un espace pour ne pas que la flèche chevauche le titre H1 */
+}
+
+/* Ajustement pour le mode sombre (écriture bleue) */
+body.dark-mode .back-arrow {
+    color: #58a6ff;
+    border-color: #58a6ff;
+}
