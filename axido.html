@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation Entreprise | Jérémy GOMMEZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">Jérémy GOMMEZ</a>
+        <a href="experiences.html" class="back-arrow" title="Retour aux expériences">
+    <i class="fas fa-arrow-left"></i> Retour
+</a>
+    <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="experiences.html">Expériences</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="veille.html">Veille Tech</a></li>
+        <li><i id="theme-toggle" class="fas fa-moon" style="cursor:pointer;"></i></li>
+    </ul>
+</nav>
+<main class="main-content">
+    <h1>Présentation : Axido</h1>
+    <section class="card">
+        <h2>L'ESN de Proximité</h2>
+        <ul>
+            <li><strong>CA & Structure :</strong> 25 millions d'euros de CA, filiale du groupe APIXIT.</li>
+            <li><strong>Engagement :</strong> Disponibilité garantie des systèmes critiques via des centres de support 24h/7j.</li>
+            <li><strong>Proximité :</strong> 7 agences en France pour garantir des interventions sur site en moins de 4 heures.</li>
+        </ul>
+    </section>
+    <section class="card">
+        <h2>Expertise Technique</h2>
+        <ul>
+            <li><strong>Cybersécurité :</strong> Protection des points de terminaison, audits de vulnérabilité et formation des utilisateurs.</li>
+            <li><strong>Cloud Souverain :</strong> Hébergement en France dans des Datacenters certifiés ISO 27001 et HDS.</li>
+        </ul>
+    </section>
+</main>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Basculer le mode au clic
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+
+        // Changer l'icône et sauvegarder le choix
+        if (body.classList.contains('light-mode')) {
+            themeToggle.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'light');
+        } else {
+            themeToggle.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // Garder le thème choisi même si on change de page
+    window.onload = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.classList.replace('fa-moon', 'fa-sun');
+        }
+    };
+</script>
+
+</body>
